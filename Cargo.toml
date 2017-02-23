@@ -1,0 +1,7 @@
+[package]
+name = "diceware-rs"
+version = "0.1.0"
+authors = ["Justin Harrison <me@justinharrison.ca>"]
+
+[dependencies]
+rand = "0.3"
