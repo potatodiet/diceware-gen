@@ -1,5 +1,5 @@
 [package]
-name = "diceware-rs"
+name = "diceware-gen"
 version = "0.1.0"
 authors = ["Justin Harrison <me@justinharrison.ca>"]
 license = "MIT"
