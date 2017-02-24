@@ -3,7 +3,7 @@ name = "diceware-gen"
 version = "0.1.0"
 authors = ["Justin Harrison <me@justinharrison.ca>"]
 license = "MIT"
-repository = "https://github.com/matthin/diceware-repository"
+repository = "https://github.com/matthin/diceware-gen"
 description = "This program generates random passphrases based on EFF's long wordlist."
 
 [dependencies]
