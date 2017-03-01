@@ -1,4 +1,7 @@
 # diceware-gen
+[![Crate Version](https://img.shields.io/crates/v/diceware-gen.svg)]
+(https://crates.io/crates/diceware-gen)
+
 This program generates random passphrases based on
 [EFF's long wordlist](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases).
 
