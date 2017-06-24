@@ -1,5 +1,6 @@
 extern crate rand;
 
+use std::env;
 use std::io::{self, BufReader};
 use std::io::prelude::*;
 use std::fs::File;
@@ -16,7 +17,6 @@ impl From<io::Error> for DiceError {
     }
 }
 
-
 pub struct DicewareGen {
     words: Vec<String>,
     rng: rand::ThreadRng,
@@ -26,7 +26,8 @@ impl DicewareGen {
     pub fn new() -> Result<DicewareGen, DiceError> {
         Ok(DicewareGen {
             words: {
-                let f = File::open("eff_large_wordlist.txt")?;
+                // The executable's parent should always exist, since every file needs a parent.
+                let f = File::open(env::current_exe()?.parent().unwrap().join("eff_large_wordlist.txt"))?;
                 BufReader::new(f).lines().map(|line| {
                     line
                 }).collect::<Result<Vec<String>, io::Error>>()?
