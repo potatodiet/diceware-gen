@@ -4,7 +4,7 @@
 This program generates random passphrases based on
 [EFF's long wordlist](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases).
 
-# usage
+# Usage
 ```rust
 extern crate diceware_gen;
 use diceware_gen::DicewareGen;
@@ -16,3 +16,6 @@ fn main() {
     }
 }
 ```
+
+# Licensing
+Licensed under GPL-3.0-only
