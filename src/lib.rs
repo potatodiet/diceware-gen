@@ -1,11 +1,9 @@
-extern crate rand;
-
 use std::env;
 use std::io::{self, BufReader};
 use std::io::prelude::*;
 use std::fs::File;
 use std::path::Path;
-use rand::{thread_rng, Rng};
+use rand::prelude::*;
 
 #[derive(Debug)]
 pub enum DiceError {
@@ -27,7 +25,7 @@ impl From<env::VarError> for DiceError {
 
 pub struct DicewareGen {
     words: Vec<String>,
-    rng: rand::ThreadRng,
+    rng: ThreadRng,
 }
 
 impl DicewareGen {
@@ -44,9 +42,10 @@ impl DicewareGen {
 
         Ok(DicewareGen {
             words: {
-                BufReader::new(f).lines().map(|line| {
-                    line
-                }).collect::<Result<Vec<String>, io::Error>>()?
+                BufReader::new(f)
+                    .lines()
+                    .map(|l| l.expect("Error parsing wordlist"))
+                    .collect()
             },
             rng: thread_rng(),
         })
@@ -56,7 +55,7 @@ impl DicewareGen {
         (0..rounds).map(|_| {
             let x: usize = self.rng.gen_range(0, 7775);
             self.words[x].clone()
-        }).collect::<Vec<String>>()
+        }).collect()
     }
 }
 
