@@ -1,5 +1,3 @@
-extern crate diceware_gen;
-
 use diceware_gen::DicewareGen;
 use std::env;
 
