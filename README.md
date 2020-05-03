@@ -4,18 +4,18 @@
 This program generates random passphrases based on
 [EFF's long wordlist](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases).
 
-# Usage
-```rust
-extern crate diceware_gen;
-use diceware_gen::DicewareGen;
+# Requirements
+* Rust v1.31+
 
-fn main() {
-    let dice = DicewareGen::new().unwrap();
-    for word in dice.gen(10) {
-        println!("{}", word);
-    }
-}
-```
+# Building
+    cargo build --release
+
+The compiled binary will be located at target/release/diceware-gen
+
+# Usage
+    diceware-gen N
+
+Where N = the number of random words to produce.
 
 # Licensing
 Licensed under GPL-3.0-only
